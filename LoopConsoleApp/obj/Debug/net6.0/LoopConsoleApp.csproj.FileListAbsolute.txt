@@ -1,0 +1,15 @@
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.AssemblyInfo.cs
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\bin\Debug\net6.0\LoopConsoleApp.exe
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\bin\Debug\net6.0\LoopConsoleApp.deps.json
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\bin\Debug\net6.0\LoopConsoleApp.runtimeconfig.json
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\bin\Debug\net6.0\LoopConsoleApp.dll
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\bin\Debug\net6.0\LoopConsoleApp.pdb
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.dll
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\refint\LoopConsoleApp.dll
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.pdb
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\LoopConsoleApp.genruntimeconfig.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\LoopConsoleApp\obj\Debug\net6.0\ref\LoopConsoleApp.dll

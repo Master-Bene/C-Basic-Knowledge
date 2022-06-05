@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "JaJRYG6ZnoR+m7Qhc2jbv2JMjsyfsMNIzgdVDSz6gKLJ90vj4Vtih2fEeGDfpvXAzgOXTbW9k4W+1Vrsg8g95g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bene\\Desktop\\Learning\\C# Basic Knowledge\\GrammarApp\\InterfaceProgram\\InterfaceProgram.csproj",
+  "expectedPackageFiles": [
+    "D:\\Program Files\\NuGetPackages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "D:\\Program Files\\NuGetPackages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "D:\\Program Files\\NuGetPackages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

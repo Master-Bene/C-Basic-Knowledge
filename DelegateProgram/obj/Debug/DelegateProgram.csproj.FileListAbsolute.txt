@@ -1,0 +1,8 @@
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\bin\Debug\DelegateProgram.exe.config
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\bin\Debug\DelegateProgram.exe
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\bin\Debug\DelegateProgram.pdb
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\obj\Debug\DelegateProgram.csproj.AssemblyReference.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\obj\Debug\DelegateProgram.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\obj\Debug\DelegateProgram.csproj.CoreCompileInputs.cache
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\obj\Debug\DelegateProgram.exe
+C:\Users\Bene\Desktop\Learning\C# Basic Knowledge\GrammarApp\DelegateProgram\obj\Debug\DelegateProgram.pdb
