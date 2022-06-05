@@ -77,24 +77,39 @@ namespace DelegateProgram.Publish_Subscriber
                 //}
 
                 //2.此时，我们可以采用 先获得委托链表，然后在遍历这个链表，通过环链表中的每个委托对象来调用方法，这样可以分别获得每个方法的返回值或异常处理，而不至于返回值被覆盖或异常中断，而影响到后续订阅者的方法调用：
-                Delegate[] delArr = NumberChange4.GetInvocationList();
-                foreach (Delegate item in delArr)
+                //Delegate[] delArr = NumberChange4.GetInvocationList();
+                //foreach (Delegate item in delArr)
+                //{
+                //    this.count++;
+                //    try
+                //    {
+                //        // 进行一个向下转换
+                //        NumberChangeEventHandler3 method = (NumberChangeEventHandler3)item;
+                //        string msg = method(count);
+                //        ReturnMsg.Add(msg);
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        Console.WriteLine($"Exception:{ex.InnerException?.Message ?? ex.Message}");
+                //    }
+                //}
+
+                //3.注意到Delegate是NumberChangeEventHandler3的基类，所以为了触发事件，先要进行一个向下的强制转换，之后才能在其上触发事件，调用所有注册对象的方法。除了使用这种方式以外，还有一种更灵活方式可以调用方法，它是定义在Delegate基类中的DynamicInvoke()方法
+                Delegate[] delArr2 = NumberChange4.GetInvocationList();
+                foreach (Delegate item2 in delArr2)
                 {
                     this.count++;
                     try
                     {
-                        // 进行一个向下转换
-                        NumberChangeEventHandler3 method = (NumberChangeEventHandler3)item;
-                        string msg = method(count);
-                        ReturnMsg.Add(msg);
+                        // 使用DynamicInvoke方法触发事件
+                        var msg = item2.DynamicInvoke(this.count);
+                        ReturnMsg.Add(msg.ToString());
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Exception:" + ex.Message);
+                        Console.WriteLine("Exception:" + (ex.InnerException?.Message ?? ex.Message));
                     }
                 }
-
-                //3.注意到Delegate是NumberChangeEventHandler3的基类，所以为了触发事件，先要进行一个向下的强制转换，之后才能在其上触发事件，调用所有注册对象的方法。除了使用这种方式以外，还有一种更灵活方式可以调用方法，它是定义在Delegate基类中的DynamicInvoke()方法
             }
         }
 

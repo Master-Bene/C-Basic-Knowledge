@@ -26,7 +26,8 @@ namespace DelegateProgram.Publish_Subscriber
         }
         public string OnNumberChange1(int count)
         {
-            throw new Exception("Subscriber2 异常了");
+            //throw new Exception("Subscriber2 异常了");
+            throw new NotImplementedException("Subscriber2 异常了");
             Console.WriteLine($"Subscriber2 Invoked! number:{count}");
             return "Subscriber2";
         }
