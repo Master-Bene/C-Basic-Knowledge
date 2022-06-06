@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using DelegateProgram.DelegatePart1;
 using DelegateProgram.Observer;
 using DelegateProgram.Publish_Subscriber;
@@ -235,7 +236,7 @@ namespace DelegateProgram
             publish4.NumberChange4 += subscriber6.OnNumberChange1;
             publish4.NumberChange4 += subscriber7.OnNumberChange1;
             publish4.NumberChange4 += subscriber8.OnNumberChange1;
-            publish4.DoSomething();
+            //publish4.DoSomething();
 
             //var ret = publish4.DoSomethings(delegate () { Console.WriteLine("123"); });
             //publish4.DoSomethings(() => { Console.WriteLine("123"); });
@@ -244,7 +245,25 @@ namespace DelegateProgram
 
             #endregion
 
+            #region 委托中订阅者方法超时的处理
+            Publish publish5 = new Publish();
+            Subscriber subscriber9 = new Subscriber();
+            Subscriber2 subscriber10 = new Subscriber2();
+            Subscriber3 subscriber11 = new Subscriber3();
 
+            publish5.NumberChange5 += subscriber9.OnInvoke;
+            publish5.NumberChange5 += subscriber10.OnInvoke;
+            publish5.NumberChange5 += subscriber11.OnInvoke;
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            publish5.DoSomething();
+            //subscriber9.OnInvoke();
+            //subscriber10.OnInvoke();
+            //subscriber11.OnInvoke();
+            sw.Stop();
+            Console.WriteLine($"\n{sw.ElapsedMilliseconds}毫秒 Control back to client!"); // 返回控制权
+
+            #endregion
 
             Console.ReadKey();
         }

@@ -39,6 +39,8 @@ namespace DelegateProgram.Publish_Subscriber
         public List<string> ReturnMsg { get; set; } = new List<string>();
         public event NumberChangeEventHandler3 NumberChange4;
 
+        public event NumberChangeEventHandler4 NumberChange5;
+
         public void DoSomething()
         {
             //在这里完成一些工作
@@ -83,7 +85,7 @@ namespace DelegateProgram.Publish_Subscriber
                 //    this.count++;
                 //    try
                 //    {
-                //        // 进行一个向下转换
+                //        // 进行一个向下强制转换为具体的委托类型
                 //        NumberChangeEventHandler3 method = (NumberChangeEventHandler3)item;
                 //        string msg = method(count);
                 //        ReturnMsg.Add(msg);
@@ -110,6 +112,19 @@ namespace DelegateProgram.Publish_Subscriber
                         Console.WriteLine("Exception:" + (ex.InnerException?.Message ?? ex.Message));
                     }
                 }
+            }
+            if (NumberChange5 != null)
+            {
+                Console.WriteLine("DoSomething invoked!");
+                Delegate[] delarr = NumberChange5.GetInvocationList();
+                foreach (var item in delarr)
+                {
+                    NumberChangeEventHandler4 del = (NumberChangeEventHandler4)item;
+                    del.BeginInvoke(null,null);
+                }
+                
+
+
             }
         }
 

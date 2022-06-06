@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace DelegateProgram.Publish_Subscriber
 {
@@ -14,6 +15,12 @@ namespace DelegateProgram.Publish_Subscriber
         {
             Console.WriteLine($"Subscriber Invoked! number:{count}");
             return "Subscriber";
+        }
+
+        public void OnInvoke()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(3));      // 模拟耗时三秒才能完成方法
+            Console.WriteLine("wait for 3 seconds,Subscriber Invoked!");
         }
     }
     public class Subscriber2
@@ -31,6 +38,11 @@ namespace DelegateProgram.Publish_Subscriber
             Console.WriteLine($"Subscriber2 Invoked! number:{count}");
             return "Subscriber2";
         }
+        public void OnInvoke()
+        {
+            throw new Exception("Subsciber2 Failed");   // 即使抛出异常也不会影响到客户端
+            Console.WriteLine(" Subscriber2 Immediately Invoked!");
+        }
     }
 
     public class Subscriber3
@@ -45,6 +57,11 @@ namespace DelegateProgram.Publish_Subscriber
         {
             Console.WriteLine($"Subscriber3 Invoked! number:{count}");
             return "Subscriber3";
+        }
+        public void OnInvoke()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(2));     // 模拟耗时两秒才能完成方法
+            Console.WriteLine("wait for 2 seconds,Subscriber3 Invoked!");
         }
     }
 
