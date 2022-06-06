@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.Remoting.Messaging;
+using System.Threading;
 using DelegateProgram.DelegatePart1;
 using DelegateProgram.Observer;
 using DelegateProgram.Publish_Subscriber;
@@ -238,6 +240,7 @@ namespace DelegateProgram
             publish4.NumberChange4 += subscriber8.OnNumberChange1;
             //publish4.DoSomething();
 
+            //publish4.DoSomethings(test);
             //var ret = publish4.DoSomethings(delegate () { Console.WriteLine("123"); });
             //publish4.DoSomethings(() => { Console.WriteLine("123"); });
             publish4.ReturnMsg?.ForEach(f => Console.WriteLine(f));
@@ -246,6 +249,7 @@ namespace DelegateProgram
             #endregion
 
             #region 委托中订阅者方法超时的处理
+
             Publish publish5 = new Publish();
             Subscriber subscriber9 = new Subscriber();
             Subscriber2 subscriber10 = new Subscriber2();
@@ -256,7 +260,7 @@ namespace DelegateProgram
             publish5.NumberChange5 += subscriber11.OnInvoke;
             Stopwatch sw = new Stopwatch();
             sw.Start();
-            publish5.DoSomething();
+            //publish5.DoSomething();
             //subscriber9.OnInvoke();
             //subscriber10.OnInvoke();
             //subscriber11.OnInvoke();
@@ -265,7 +269,50 @@ namespace DelegateProgram
 
             #endregion
 
+            #region 委托和方法的异步调用
+            //Func<int,int,int> adddel = new Func<int, int, int>(Add);
+            Func<int, int, int> adddel=new Func<int, int, int>(Add);
+            IAsyncResult asyncResult = adddel.BeginInvoke(1, 2, OnAddComplete, null);
+            int result = 0, result2 = 0;
+            result = adddel.EndInvoke(asyncResult);
+            //result2 = GetReturn(asyncResult);
+
+            
+
+            Console.WriteLine(result);
+            Console.WriteLine(result2);
+
+            #endregion
+
             Console.ReadKey();
         }
+
+        public static void test()
+        {
+            Console.WriteLine("test");
+        }
+
+        public static int Add(int a, int b) => a + b;
+        public static int Add2(int a, int b) => a - b;
+        static int GetReturn(IAsyncResult asyncResult)
+        {
+            AsyncResult result = (AsyncResult)asyncResult;
+            Func<int, int, int> del = (Func<int, int, int>)result.AsyncDelegate;
+            int rtn = del.EndInvoke(asyncResult);
+            return rtn;
+        }
+
+        static void OnAddComplete(IAsyncResult asyncResult)
+        {
+            AsyncResult result = (AsyncResult)asyncResult;
+            Func<int, int, int> del = (Func<int, int, int>)result.AsyncDelegate;
+            string data = (string)asyncResult.AsyncState;
+
+            int rtn = del.EndInvoke(asyncResult);
+            Console.WriteLine("Result, {1}; Data: {2}\n",
+                Thread.CurrentThread.Name, rtn, data);
+        }
     }
+
+    //public delegate int AddDelegate(int a, int b);
 }
